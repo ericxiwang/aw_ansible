@@ -1,0 +1,4 @@
+- hosts: dev-server
+  remote_user: root
+  roles:
+    -nginx

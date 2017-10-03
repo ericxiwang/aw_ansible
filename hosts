@@ -1,0 +1,2 @@
+[dev-server]
+ansible_ssh_key=xxx ansible_host=10.16.0.139

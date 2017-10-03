@@ -1,0 +1,9 @@
+- hosts: dev-server
+  remote_user: root
+  roles:
+    - opencv
+    - cuda
+    - cudnn
+    - tensorflow
+    - ffmpeg
+    - qt5
