@@ -28,7 +28,7 @@ sudo apt-get install -y pkg-config
 sudo apt-get install -y python-numpy python-dev
 sudo apt-get install -y libavcodec-dev libavformat-dev libswscale-dev
 sudo apt-get install -y libjpeg-dev libpng-dev libtiff-dev libjasper-dev
-sudo apt-get install -y qt5-default
+
 
 apt-get -qq install libopencv-dev build-essential checkinstall cmake pkg-config yasm libjpeg-dev libjasper-dev libavcodec-dev libavformat-dev libswscale-dev libdc1394-22-dev libxine-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev libv4l-dev python-dev python-numpy libtbb-dev qt5-default qtbase5-dev qtcore5-dev qtdeclarative5-dev libgtk2.0-dev libmp3lame-dev libopencore-amrnb-dev libopencore-amrwb-dev libtheora-dev libvorbis-dev libxvidcore-dev x264 v4l-utils
 
@@ -36,20 +36,9 @@ apt-get -y install libopencv-dev build-essential cmake libgtk2.0-dev pkg-config 
 
 
 
-cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D WITH_TBB=ON -D WITH_V4L=ON -D WITH_QT=ON -D WITH_OPENGL=ON ..
-make -j$(nproc)
-make install
-
-
-/bin/bash -c 'echo "/usr/local/lib" > /etc/ld.so.conf.d/opencv.conf'
-ldconfig
-pkg-config --modversion opencv
-
-
-
 cd /opt
 git clone https://github.com/opencv/opencv.git
-git clone https://github.com/opencv/opencv_contrib.git
+#git clone https://github.com/opencv/opencv_contrib.git
 cd opencv
 git checkout 3.3.0
 
